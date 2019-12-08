@@ -1,0 +1,34 @@
+﻿@model Person
+
+<div>
+    <form asp-action="create-post">
+        <div class="form-group row">
+            <label asp-for="Name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input asp-for="Name" type="text" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+        </div>
+        @*<div class="form-group row">
+                <label asp-for="Name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input asp-for="Name"
+                           data-val="true"
+                           data-val-textMatch="Enter value should always be Naveen"
+                           data-val-textMatch-expectedText="Naveen"
+                           type="text" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+            </div>*@
+        <div class="form-group row">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+@section Scripts{
+
+    @await Html.PartialAsync("/Views/Shared/_ValidationScriptsPartial.cshtml")
+    <script src="~/js/customValidation.js"></script>
+}

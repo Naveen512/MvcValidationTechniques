@@ -1,0 +1,21 @@
+﻿<div>
+    <div class="row">
+        <div class="col col-sm-12">
+            <button type="button" class="btn btn-primary" id="loadform">Load Form And Add Dynamic Validations</button>
+        </div>
+    </div>
+    <div class="row" style="margin-top:10px">
+        <div class="col col-sm-12">
+            <div id="form-container">
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+@section Scripts{
+
+    @await Html.PartialAsync("/Views/Shared/_ValidationScriptsPartial.cshtml")
+    <script src="~/js/customValidation.js"></script>
+    <script src="~/js/dynamicForm.js"></script>
+}
